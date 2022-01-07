@@ -1,0 +1,161 @@
+@import './constants/base/global.scss';
+@import './constants/base/colors.scss';
+@import '../../assets/css/content/dropdown.scss';
+@import '../../assets/css/content/card.scss';
+@import '../../assets/css/content/table.scss';
+
+body,
+html {
+  background-color: $SKYBLUE;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+// common css
+input[type='radio'],
+input[type='checkbox'] {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: $DARK;
+}
+.h1 {
+  color: $DARK;
+  font-size: 30px;
+  font-weight: 600;
+  padding-right: 10px;
+  @media screen and (max-width: 1024px) {
+    // font-size: 30px;
+  }
+}
+.h6 {
+  color: $GRAY_SHADE3;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 12px;
+}
+span {
+  color: $GRAY_SHADE1;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a,
+label {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mainWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0 20px;
+  background-color: #e3e9f6;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @media screen and (max-width: 768px) {
+    padding: 10px 10px 0 10px;
+  }
+}
+.contentWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 20px 0;
+  position: relative;
+  @media screen and (max-width: 1024px) {
+    padding: 8px 0;
+  }
+  & .subContentWrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    @media screen and (max-width: 1024px) {
+      margin-left: 0;
+    }
+  }
+}
+
+// ================= FORM CONTROLS =================
+.btn {
+  &:focus {
+    border: 0;
+    box-shadow: none;
+  }
+  &.dropdown-toggle {
+    padding: 0;
+    position: relative;
+    &::after {
+      border: 0;
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+      transform: rotate(45deg);
+      width: 10px;
+      height: 10px;
+      margin-left: 10px;
+      border-color: $GRAY_SHADE4;
+    }
+  }
+}
+.form-group {
+  position: relative;
+  width: 100%;
+  & .searchIcon {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    height: 20px;
+    width: 20px;
+  }
+  .form-control {
+    background-color: #f0f0f0;
+    border: 0;
+    padding: 12px;
+    padding-left: 45px;
+    border-radius: 10px;
+    color: $GRAY_SHADE3;
+    &::placeholder {
+      color: $GRAY_SHADE3;
+    }
+    &:focus {
+      background-color: $GRAY_SHADE2;
+      box-shadow: none;
+    }
+  }
+}
+.form-select {
+  background-color: $GREEN;
+  color: $WHITE;
+  background-image: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+.dropdown-menu {
+  border-radius: 10px;
+  & .dropdown-item:focus,
+  & .dropdown-item:hover {
+    background-color: $GREEN_SHADE2;
+  }
+}
