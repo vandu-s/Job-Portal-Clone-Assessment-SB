@@ -1,0 +1,63 @@
+@import '../../assets/css/colors.scss';
+.job_appication_top_heading_wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.big_heading {
+  color: $DARK_SHADE2;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.blue_comman_text {
+  font-size: 13px;
+  //   padding-top: 5px;
+  color: $DARK_SHADE2 !important;
+}
+.blue_comman_text_dark {
+  font-size: 14px;
+  // padding-top: 5px;
+  font-weight: bold;
+  color: $DARK_SHADE2 !important;
+  margin-bottom: 8px;
+}
+.close_icon {
+  font-size: 14px;
+  color: $DARK_SHADE2 !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+.border {
+  border-bottom: 1px solid $DARK_SHADE2;
+}
+
+.application_card_wrapper {
+  background-color: #eeeff2;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.application_card {
+  padding: 10px;
+  border-radius: 12px !important;
+  border: 1px solid #303f6080;
+  margin: 5px;
+}
+.applicant_details_wrapper {
+  display: flex;
+  //   justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.skill_wrapper {
+  padding: 10px;
+}
+.avatar {
+  margin-right: 10px;
+  background-color: #d9efff;
+}
+.MuiAvatar-colorDefault {
+  background-color: #d9efff !important;
+  color: $DARK_SHADE2 !important;
+}

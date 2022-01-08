@@ -7,8 +7,9 @@ import './Banner.scss';
 import girlImg from '../../assets/images/girlOffice.png';
 
 import Login from '../../Pages/LoginAndSignup/Login';
+import JobApplication from '../../Pages/JobApplications/JobApplication';
 
-const Banner = () => {
+const Banner = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -33,7 +34,10 @@ const Banner = () => {
           </Box>
           <Grid container>
             <Grid item sm={12} lg={4}>
-              <Box className="banner_heading">
+              <Box
+                className="banner_heading"
+                style={{ display: `${props.displayHeading}` }}
+              >
                 <h1>Welcome to </h1>
                 <h1>
                   <span>My</span>Jobs{' '}
@@ -45,7 +49,10 @@ const Banner = () => {
             </Grid>
             <Grid item sm={12} lg={4} />
             <Grid item sm={12} lg={4}>
-              <Box className="banner_img">
+              <Box
+                className="banner_img"
+                style={{ display: `${props.displayGirlImg}` }}
+              >
                 <img src={girlImg} alt="girlImg" />
               </Box>
             </Grid>
@@ -54,7 +61,7 @@ const Banner = () => {
       </Box>
 
       <Modal handleOpen={handleOpen} open={open} handleClose={handleClose}>
-        <Login />
+        <Login handleClose={handleClose} handleOpen={handleOpen} open={open} />
       </Modal>
     </>
   );

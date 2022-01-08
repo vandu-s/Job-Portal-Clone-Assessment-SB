@@ -11,10 +11,12 @@ import logo5 from '../../assets/images/logo5.PNG';
 import logo6 from '../../assets/images/logo6.PNG';
 import logo7 from '../../assets/images/logo7.PNG';
 import logo8 from '../../assets/images/logo8.PNG';
-
+import Banner from '../../components/Banner/Banner';
 const LandingPage = () => {
   return (
     <Layout>
+      <Banner />
+
       <Box className="layout_padding">
         <Container fixed>
           <Grid container spacing={4}>

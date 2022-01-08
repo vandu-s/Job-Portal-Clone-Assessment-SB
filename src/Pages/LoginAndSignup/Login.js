@@ -6,24 +6,12 @@ import {
   InputLabel,
   InputBase,
 } from '@material-ui/core';
-import {
-  createStyles,
-  alpha,
-  Theme,
-  ThemeProvider,
-  withStyles,
-  makeStyles,
-  createTheme,
-} from '@material-ui/core/styles';
 import React from 'react';
 import Button from '../../components/Button/Button';
 import Modal from '../../components/Modal/Modal';
 import '../../assets/css/Form.scss';
 import Signup from '../../Pages/LoginAndSignup/Signup';
 import ForgetPassword from '../../Pages/ForgetPassword/ForgetPassword';
-import ResetPassword from '../../Pages/ResetPassword/ResetPassword';
-import PostJob from '../../Pages/PostJob/PostJob';
-
 const Login = () => {
   const [open, setOpen] = React.useState(false);
   const [openForgetPwd, setOpenForgetPwd] = React.useState(false);
@@ -42,6 +30,10 @@ const Login = () => {
 
   const handleCloseForgetPwd = () => {
     setOpenForgetPwd(false);
+  };
+  const closeAndOpenDialog = () => {
+    setOpenForgetPwd(true);
+    setOpen(false);
   };
 
   return (
@@ -105,7 +97,7 @@ const Login = () => {
         open={openForgetPwd}
         handleClose={handleCloseForgetPwd}
       >
-        <PostJob />
+        <ForgetPassword />
       </Modal>
     </div>
   );

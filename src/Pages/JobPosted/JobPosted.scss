@@ -1,0 +1,34 @@
+@import '../../assets/css/colors.scss';
+.Job_Posted_Wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: absolute;
+  bottom: -150px;
+  h3 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+}
+.job_card {
+  padding: 15px;
+  border-radius: 12px !important;
+  margin: 5px;
+}
+.job_card_contents {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.location_icons {
+  color: #43afff !important;
+  font-size: 15px !important;
+}
+.layout_main_container2 {
+  background-color: $LIGHT_BLUE_SHADE1;
+  min-height: 65vh;
+  //   overflow-x: hidden;
+  //   width: 100%;
+  z-index: 2;
+}
