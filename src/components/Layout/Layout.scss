@@ -1,0 +1,13 @@
+@import '../../assets/css/colors.scss';
+
+.layout_main_container {
+  background-color: $LIGHT_BLUE_SHADE1;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  z-index: 2;
+}
+.layout_padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

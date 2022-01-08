@@ -1,0 +1,23 @@
+@import '../../assets/css/colors.scss';
+.layout_padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.landing_page_heading {
+  h4 {
+    color: $DARK_SHADE2;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+.card_content {
+  h4 {
+    color: $SKYBLUE;
+    margin-bottom: 10px;
+    font-size: 17px;
+  }
+  p {
+    font-size: 13px;
+    text-align: justify;
+  }
+}
