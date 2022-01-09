@@ -86,3 +86,13 @@
   border-radius: 5px !important;
   opacity: 1 !important;
 }
+.error_focused {
+  border: 1px solid red;
+}
+
+.error {
+  font-size: 13px;
+  color: red;
+  text-align: right;
+  margin-top: 5px;
+}

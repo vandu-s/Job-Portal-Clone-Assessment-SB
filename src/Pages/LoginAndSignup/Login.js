@@ -12,6 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
   const [openForgetPwd, setOpenForgetPwd] = React.useState(false);
+  const [error, setError] = useState('');
   const initialState = {
     password: '',
     email: '',
@@ -42,6 +43,7 @@ const Login = () => {
       })
       .catch((err) => {
         console.log(err);
+        setError('Incorrect email address or password.');
       });
   };
 
@@ -106,6 +108,7 @@ const Login = () => {
                   onChange={onInputChange}
                   type="password"
                 />
+                <p className="error">{error}</p>
               </Grid>
               <Grid Item sm={12}>
                 <Box className="login_btn_wrapper">

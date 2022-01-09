@@ -34,8 +34,7 @@ const Banner = (props) => {
 
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-  // const userData = JSON.parse(localStorage.getItem('personObject'));
-  // console.log('userData', userData);
+  const userData = JSON.parse(localStorage.getItem('user'));
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -54,9 +53,11 @@ const Banner = (props) => {
       setOpen(false);
     }
   }
-  const logout = () => {
+  const logout = async () => {
     localStorage.clear();
-    navigate('/');
+
+    await navigate('/');
+    alert('You have successfully logged out.');
   };
 
   // return focus to the button when we transitioned from !open -> open
@@ -85,7 +86,7 @@ const Banner = (props) => {
                 aria-haspopup="true"
                 onClick={handleToggle}
               >
-                <Avatar className="avatar">R</Avatar>
+                <Avatar className="avatar">{userData.email.charAt(0)}</Avatar>
                 <ArrowDropDownIcon style={{ color: '#FFFFFF' }} />
               </Button>
               <Popper

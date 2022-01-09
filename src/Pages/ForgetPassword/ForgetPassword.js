@@ -37,7 +37,7 @@ const ForgetPassword = () => {
       )
       .then((res) => {
         if (res.data.message == 'Token is valid') {
-          alert('Token is valid');
+          // alert('Token is valid');
         }
       })
       .catch((err) => {

@@ -4,10 +4,8 @@ import Button from '../Button/Button';
 import Modal from '../../components/Modal/Modal';
 import '../../assets/css/Form.scss';
 import './Banner.scss';
-import girlImg from '../../assets/images/girlOffice.png';
 
 import Login from '../../Pages/LoginAndSignup/Login';
-import JobApplication from '../../Pages/JobApplications/JobApplication';
 
 const Banner = (props) => {
   const [open, setOpen] = React.useState(false);
