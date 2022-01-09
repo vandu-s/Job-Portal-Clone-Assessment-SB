@@ -48,14 +48,6 @@ const Banner = (props) => {
               </Box>
             </Grid>
             <Grid item sm={12} lg={4} />
-            <Grid item sm={12} lg={4}>
-              <Box
-                className="banner_img"
-                style={{ display: `${props.displayGirlImg}` }}
-              >
-                <img src={girlImg} alt="girlImg" />
-              </Box>
-            </Grid>
           </Grid>
         </Container>
       </Box>

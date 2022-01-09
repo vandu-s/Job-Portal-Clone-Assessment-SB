@@ -66,7 +66,23 @@
   justify-content: center;
   //   align-items: center;
 }
+.signup_btn_wrapper {
+  display: flex;
+  align-items: center;
+}
 .buttonIcons {
-  font-size: 14px !important;
+  font-size: 18px !important;
   color: $WHITE !important;
+  margin-right: 5px;
+}
+.candidatebuttonIcons {
+  font-size: 18px !important;
+  color: #43afff !important;
+  margin-right: 5px;
+}
+.candiadte_btn {
+  background: #e8e8e833;
+  border: 1px solid #c6c6c6 !important;
+  border-radius: 5px !important;
+  opacity: 1 !important;
 }

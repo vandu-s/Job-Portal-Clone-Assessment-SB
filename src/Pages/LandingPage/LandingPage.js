@@ -12,10 +12,24 @@ import logo6 from '../../assets/images/logo6.PNG';
 import logo7 from '../../assets/images/logo7.PNG';
 import logo8 from '../../assets/images/logo8.PNG';
 import Banner from '../../components/Banner/Banner';
+import girlImg from '../../assets/images/girlOffice.png';
+
 const LandingPage = () => {
   return (
     <Layout>
       <Banner />
+      <Container fixed>
+        <Grid item sm={12} lg={4}>
+          <Box
+            className="Job_Posted_Wrapper"
+            // style={{ display: `${props.displayGirlImg}` }}
+          >
+            <Box className="banner_right_img">
+              <img src={girlImg} alt="girlImg" />
+            </Box>
+          </Box>
+        </Grid>
+      </Container>
 
       <Box className="layout_padding">
         <Container fixed>

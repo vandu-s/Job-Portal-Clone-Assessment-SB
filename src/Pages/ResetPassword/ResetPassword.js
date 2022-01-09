@@ -1,35 +1,47 @@
-import {
-  Box,
-  Container,
-  Grid,
-  FormControl,
-  InputLabel,
-  InputBase,
-} from '@material-ui/core';
-import {
-  createStyles,
-  alpha,
-  Theme,
-  ThemeProvider,
-  withStyles,
-  makeStyles,
-  createTheme,
-} from '@material-ui/core/styles';
-import React from 'react';
+import { Box, Grid, InputLabel, InputBase } from '@material-ui/core';
+import React, { useState } from 'react';
 import Button from '../../components/Button/Button';
-import Modal from '../../components/Modal/Modal';
 import '../../assets/css/Form.scss';
-import Signup from '../../Pages/LoginAndSignup/Signup';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const ResetPassword = () => {
-  const [open, setOpen] = React.useState(false);
+  const ResetPwdToken = sessionStorage.getItem('ResetPwdToken');
+  const navigate = useNavigate();
 
-  const handleOpen = () => {
-    setOpen(true);
+  const initialState = {
+    password: '',
+    confirmPassword: '',
+    token: ResetPwdToken,
+  };
+  const [userDetails, setUserDetails] = useState(initialState);
+  const { password, confirmPassword, token } = userDetails;
+
+  const onInputChange = (e) => {
+    setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('userDetails', userDetails);
+    await axios
+      .post(
+        `https://jobs-api.squareboat.info/api/v1/auth/resetpassword`,
+        userDetails
+      )
+      .then((res) => {
+        console.log(res);
+        if (res.data.message == 'Password updated successfully') {
+          alert('Password updated successfully');
+          sessionStorage.clear();
+          navigate('/');
+        } else {
+          alert('Failed pls try again');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -55,6 +67,10 @@ const ResetPassword = () => {
                   className="form_input"
                   placeholder="Enter your password"
                   classes={{ focused: 'form_input_focused' }}
+                  name="password"
+                  value={password}
+                  onChange={onInputChange}
+                  type="password"
                 />
               </Grid>
               <br />
@@ -67,6 +83,10 @@ const ResetPassword = () => {
                   className="form_input"
                   placeholder="Enter your password"
                   classes={{ focused: 'form_input_focused' }}
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  onChange={onInputChange}
+                  type="password"
                 />
               </Grid>
               <br />
@@ -74,7 +94,9 @@ const ResetPassword = () => {
               <Grid Item sm={12}>
                 <Box className="login_btn_wrapper">
                   <Box>
-                    <Button bgColor="#43AFFF">Reset</Button>
+                    <Button bgColor="#43AFFF" onClick={handleSubmit}>
+                      Reset
+                    </Button>
                   </Box>
                 </Box>
               </Grid>

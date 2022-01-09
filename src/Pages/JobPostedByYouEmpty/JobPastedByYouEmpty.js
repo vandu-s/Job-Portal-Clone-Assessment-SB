@@ -4,12 +4,12 @@ import { Container, Box } from '@material-ui/core';
 import Button from '../../components/Button/Button';
 import './JobPosted.scss';
 import jobImg from '../../assets/images/job.PNG';
-import Banner from '../../components/Banner/Banner';
+import Banner from '../../components/Banner/Banner2';
 
 const JobPostedByYouEmpty = () => {
   return (
     <Layout>
-      <Banner displayHeading="none" displayGirlImg="none" />
+      <Banner />
 
       <Container>
         <Box className="JobPostedWrapper">

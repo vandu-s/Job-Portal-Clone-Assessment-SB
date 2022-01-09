@@ -21,3 +21,13 @@
     text-align: justify;
   }
 }
+.banner_right_img {
+  width: 400px;
+  position: absolute;
+  right: 400px;
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+  }
+}

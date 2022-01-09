@@ -10,10 +10,11 @@ import {
   ClickAwayListener,
   Avatar,
 } from '@material-ui/core';
+import { useNavigate } from 'react-router-dom';
+
 import React from 'react';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import HomeIcon from '@material-ui/icons/Home';
-// import Button from '../Button/Button';
 import '../../assets/css/Form.scss';
 import './Banner.scss';
 
@@ -29,10 +30,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Banner = (props) => {
-  const classes = useStyles();
+  const navigate = useNavigate();
+
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-
+  // const userData = JSON.parse(localStorage.getItem('personObject'));
+  // console.log('userData', userData);
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -51,6 +54,10 @@ const Banner = (props) => {
       setOpen(false);
     }
   }
+  const logout = () => {
+    localStorage.clear();
+    navigate('/');
+  };
 
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
@@ -103,7 +110,7 @@ const Banner = (props) => {
                           id="menu-list-grow"
                           onKeyDown={handleListKeyDown}
                         >
-                          <MenuItem onClick={handleClose}>Logout</MenuItem>
+                          <MenuItem onClick={logout}>Logout</MenuItem>
                         </MenuList>
                       </ClickAwayListener>
                     </Paper>

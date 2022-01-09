@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../../components/Layout/Layout';
 import { Container, Box, Grid, Card } from '@material-ui/core';
 import './JobPosted.scss';
@@ -6,8 +6,39 @@ import jobImg from '../../assets/images/job.PNG';
 import Banner from '../../components/Banner/Banner2';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Button from '../../components/Button/Button';
+import axios from 'axios';
 
 const JobPosted = () => {
+  const [myJobs, setMyJobs] = useState([]);
+  const resetToken = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+      // "key": "Authorization",
+      // "value": "{{recruiter_token}}",
+      type: 'text',
+    },
+  };
+
+  const getJobs = async () => {
+    await axios
+      .get(`https://jobs-api.squareboat.info/api/v1/recruiters/jobs`, config)
+      .then((res) => {
+        // console.log(res.data.data.token);
+        // if (res.data.data.token) {
+        //   sessionStorage.setItem('ResetPwdToken', res.data.data.token);
+        // } else {
+        //   alert('Login Fail pls try again');
+        // }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getJobs();
+  }, []);
+
   return (
     <Layout>
       <Banner />
